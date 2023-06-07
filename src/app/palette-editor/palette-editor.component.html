@@ -1,0 +1,29 @@
+<div style="display: flex; flex-direction: row;">
+    <div class="palette-editor" [style.width.px]="paletteWidth" [style.height.px]="paletteHeight">
+        <div class="palette-container" (cdkDragEnded)="onDrop($event)">
+            <div class="box" cdkDragBoundary=".palette-editor" cdkDrag *ngFor="let box of boxes; let i= index"
+                [style.width.px]="boxWidth" [style.height.px]="boxHeight" [style.left.px]="box.x - (boxWidth/2)"
+                [style.top.px]="(paletteHeight - box.y) - (boxHeight / 2)"
+                [style.transform]="'rotate(' + box.r + 'deg)'">
+                Box {{ box.x }}, {{ box.y }} <br>
+                <button mat-raised-button (click)="rotateBox(box)">
+                    <mat-icon>rotate_right </mat-icon>
+                </button>
+                <!-- <button  mat-raised-button class="remove-button" (click)="removeBox(box)">Remove</button> -->
+            </div>
+        </div>
+    </div>
+    <div style="width: 50%; margin-left: 1rem;">
+        <div class="add-box-section">
+            <!-- <label>Box Width (mm):</label> -->
+            <!-- <input type="number" [(ngModel)]="boxWidth" [min]="10" [max]="paletteWidth" [step]="10">
+          <label>Box Height (mm):</label>
+          <input type="number" [(ngModel)]="boxHeight" [min]="10" [max]="paletteHeight" [step]="10"> -->
+            <button mat-raised-button (click)="addBox()">Add Box</button>
+        </div>
+        <div class="pattern-output">
+            <h4>Pattern Output:</h4>
+            <pre>{{ patternOutput }}</pre>
+        </div>
+    </div>
+</div>

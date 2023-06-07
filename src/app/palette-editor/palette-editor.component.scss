@@ -1,0 +1,29 @@
+.palette-editor {
+    background-color: rgb(244, 244, 244);
+    position: relative;
+    width: 50%;
+  }
+  .palette-container {
+    position: relative;
+  }
+  .box {
+    background-color: rgba(68,70,84,1);
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    cursor: move;
+    margin: 2px;
+  }
+  .remove-button {
+    margin-top: 5px;
+  }
+  .add-box-section {
+    margin-top: 20px;
+  }
+  .add-box-button {
+    margin-left: 10px;
+  }
+  .pattern-output {
+    margin-top: 20px;
+  }
